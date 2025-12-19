@@ -1,9 +1,9 @@
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-import numpy as np
-from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+#import matplotlib.pyplot as plt
+#from mpl_toolkits.mplot3d import Axes3D
+#import numpy as np
+#from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
-# Coordenadas 3D de los puntos clave
+#Puntos Clave
 points = {
     "base1_piso": (0, 0, -20),
     "base1": (0, 0, 0),
@@ -31,7 +31,7 @@ ax = fig.add_subplot(111, projection='3d')
 # Dibujar puntos
 ax.scatter(xs, ys, zs, color='blue', s=50)
 
-# Función para conectar puntos con línea
+# Conectar puntos con línea
 def plot_line(p1, p2, color, label=None, lw=2):
     x, y, z = zip(points[p1], points[p2])
     ax.plot(x, y, z, color=color, linewidth=lw, label=label)

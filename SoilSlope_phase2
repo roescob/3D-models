@@ -2,7 +2,7 @@
 #from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 #import numpy as np
 
-points = {
+#points = {
     "base1": np.array([0, 0, 0]),
     "base1_talud": np.array([0, -15, -20]),
     "base2": np.array([136, 0, 0]),
@@ -13,8 +13,8 @@ points = {
     "F": np.array([102, -12, -16])
 }
 
-fig = plt.figure(figsize=(12, 8))
-ax = fig.add_subplot(111, projection='3d')
+#fig = plt.figure(figsize=(12, 8))
+#ax = fig.add_subplot(111, projection='3d')
 
 # Función para volumen tetraedro (4 puntos)
 def volumen_tetraedro(a, b, c, d):
@@ -93,4 +93,4 @@ ax.set_ylabel('Y (ft)')
 ax.set_zlabel('Z (ft)')
 ax.set_title('Visualización y cálculo del volumen del talud')
 plt.tight_layout()
-plt.show()
+#plt.show()

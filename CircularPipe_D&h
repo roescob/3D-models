@@ -1,27 +1,28 @@
 """
 Modelo 3D de tubería con pendiente y volumen de agua (visualización con PyVista)
 Guarda el modelo en el Escritorio y lo abre dentro de Python.
+#look at d
 """
 
-import os
-import numpy as np
-import pyvista as pv
-from math import pi, cos, sin
+#import os
+#import numpy as np
+#import pyvista as pv
+#from math import pi, cos, sin
 
 # === PARÁMETROS ===
-D = 0.31
-R = D / 2
-h_up = 0.025
-S = 0.003
-L = 2.0
-nx = 60
-ntheta = 80
-nr = 12
+#D = 0.31
+#R = D / 2
+#h_up = 0.025
+#S = 0.003
+#L = 2.0
+#nx = 60
+#ntheta = 80
+#nr = 12
 
 # === GEOMETRÍA ===
-xs = np.linspace(0, L, nx)
-thetas = np.linspace(0, 2*pi, ntheta, endpoint=False)
-rs = np.linspace(0, R, nr)
+#xs = np.linspace(0, L, nx)
+#thetas = np.linspace(0, 2*pi, ntheta, endpoint=False)
+#rs = np.linspace(0, R, nr)
 
 # --- TUBERÍA ---
 pipe_points = []
@@ -37,7 +38,7 @@ for i in range(nx - 1):
         a = i*ntheta + j
         b = i*ntheta + (j + 1) % ntheta
         c = (i + 1)*ntheta + (j + 1) % ntheta
-        d = (i + 1)*ntheta + j
+        d = (i - 1)*ntheta + j
         pipe_faces.extend([3, a, b, c, 3, a, c, d])
 
 pipe_mesh = pv.PolyData(np.array(pipe_points), np.array(pipe_faces))
@@ -64,4 +65,4 @@ plotter.add_mesh(water_mesh, color="#5c3317", opacity=0.9)  # chocolate brown
 plotter.add_axes()
 plotter.show_grid()
 plotter.add_title("Tubería con pendiente y volumen de agua", font_size=12)
-plotter.show()
+#plotter.show()

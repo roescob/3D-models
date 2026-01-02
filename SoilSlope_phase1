@@ -98,4 +98,4 @@ ax.set_title('Modelo 3D del Talud con Área Interna Coloreada')
 #ax.legend(loc='upper left')
 
 plt.tight_layout()
-plt.show()
+#plt.show()
